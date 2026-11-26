@@ -5,13 +5,12 @@ import ContactButton from '../components/ContactButton';
 
 interface HeroSectionProps {
   onOpenContact: () => void;
-  onOpenPrice: () => void;
+  onOpenPrice?: () => void;
   onNavigateSection: (sectionId: string) => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
   onOpenContact,
-  onOpenPrice,
   onNavigateSection,
 }) => {
   return (
@@ -24,12 +23,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             className="hover:opacity-70 transition-opacity duration-200 cursor-pointer bg-transparent border-0 p-0 text-inherit font-inherit uppercase"
           >
             About
-          </button>
-          <button
-            onClick={onOpenPrice}
-            className="hover:opacity-70 transition-opacity duration-200 cursor-pointer bg-transparent border-0 p-0 text-inherit font-inherit uppercase"
-          >
-            Price
           </button>
           <button
             onClick={() => onNavigateSection('projects')}
